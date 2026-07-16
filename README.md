@@ -1,33 +1,93 @@
-# platform-blueprint
+# Platform Blueprint
 
-A production-ready reference platform for Kubernetes-based SaaS applications.
+A production-ready reference platform demonstrating modern Platform Engineering practices on AWS using Kubernetes, GitOps, and OpenTelemetry.
 
-Platform Blueprint demonstrates how to build a secure, observable, and self-service platform using modern Platform Engineering practices.
+## Overview
 
-## Goals
+Platform Blueprint is an opinionated reference implementation of an Internal Developer Platform (IDP).
 
-- Improve developer experience
-- Reduce operational complexity
-- Standardize deployments with GitOps
-- Enable end-to-end observability
-- Provide reusable platform patterns
+The goal is to demonstrate how engineering organizations can build a scalable, secure, observable, and self-service platform that improves developer productivity while reducing operational complexity.
 
-## Tech Stack
+This repository is inspired by production patterns used across modern cloud-native organizations.
 
-- Terraform
-- AWS
-- Amazon EKS
-- Argo CD
-- GitHub Actions / GitOps
-- OpenTelemetry
-- Prometheus
-- Grafana
-- Loki
-- Tempo
-- Backstage
+---
 
-## Status
+## Objectives
+
+- Build production-ready infrastructure with Terraform
+- Provision Amazon EKS following AWS best practices
+- Adopt GitOps with Argo CD
+- Enable end-to-end observability using OpenTelemetry
+- Standardize deployments through reusable platform patterns
+- Improve developer experience with self-service workflows
+- Document architectural decisions and operational runbooks
+
+---
+
+## Technology Stack
+
+| Layer | Technology |
+|--------|------------|
+| Cloud | AWS |
+| IaC | Terraform |
+| Container Orchestration | Amazon EKS |
+| GitOps | Argo CD |
+| CI | GitHub Actions |
+| Metrics | Prometheus |
+| Logging | Loki |
+| Tracing | Tempo |
+| Telemetry | OpenTelemetry |
+| Visualization | Grafana |
+| Developer Portal | Backstage *(planned)* |
+
+---
+
+## Architecture
+
+(Architecture diagram goes here)
+
+---
+
+## Repository Structure
+
+```text
+docs/
+architecture/
+terraform/
+kubernetes/
+gitops/
+observability/
+applications/
+scripts/
+```
+
+---
+
+## Project Status
 
 🚧 Work in Progress
 
-This repository is being built incrementally, with production-grade documentation and examples.
+Current Milestone:
+- Repository Foundation
+
+Upcoming Milestones
+
+- AWS Infrastructure
+- Amazon EKS
+- GitOps
+- OpenTelemetry
+- Observability
+- Internal Developer Platform
+- SLOs & Runbooks
+
+---
+
+## Roadmap
+
+See `/docs/ROADMAP.md`
+
+---
+
+## License
+
+MIT
