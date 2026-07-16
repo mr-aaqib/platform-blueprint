@@ -43,7 +43,6 @@ This repository is inspired by production patterns used across modern cloud-nati
 ---
 
 ## Architecture
-
                     Developers
                          │
                     Git Push
@@ -62,21 +61,20 @@ This repository is inspired by production patterns used across modern cloud-nati
                          │
                   Amazon EKS Cluster
                          │
-        ┌───────────────┼────────────────┐
-        │               │                │
+         ┌───────────────┼────────────────┐
+         │               │                │
   Platform Services   Applications   Platform APIs
                          │
                   OpenTelemetry
                          │
-       ┌─────────┬─────────┬─────────┐
-       │         │         │
-   Prometheus   Loki     Tempo
-       │         │         │
-       └─────────┴─────────┘
-             Grafana
-                 │
-      Backstage (Developer Portal)
-
+               ┌─────────┬─────────-
+               │         │         │
+             Prometheus   Loki    Tempo
+                │         │         │
+                └─────────┴─────────┘
+                      Grafana
+                        │
+               Backstage (Developer Portal)
 ---
 
 ## Repository Structure
