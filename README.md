@@ -44,7 +44,38 @@ This repository is inspired by production patterns used across modern cloud-nati
 
 ## Architecture
 
-(Architecture diagram goes here)
+                    Developers
+                         │
+                    Git Push
+                         │
+                  GitHub Repository
+                         │
+               GitHub Actions (CI)
+                         │
+        Build • Test • Scan • Publish Image
+                         │
+           Update GitOps Manifests
+                         │
+                  GitOps Repository
+                         │
+                   Argo CD (CD)
+                         │
+                  Amazon EKS Cluster
+                         │
+        ┌───────────────┼────────────────┐
+        │               │                │
+  Platform Services   Applications   Platform APIs
+                         │
+                  OpenTelemetry
+                         │
+       ┌─────────┬─────────┬─────────┐
+       │         │         │
+   Prometheus   Loki     Tempo
+       │         │         │
+       └─────────┴─────────┘
+             Grafana
+                 │
+      Backstage (Developer Portal)
 
 ---
 
