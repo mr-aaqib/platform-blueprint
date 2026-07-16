@@ -44,45 +44,35 @@ This repository is inspired by production patterns used across modern cloud-nati
 
 ## Architecture
 
-Developer
-    │
-    ▼
-GitHub Repository
-    │
-    ▼
-GitHub Actions (CI)
-    │
-    ├── Build
-    ├── Test
-    ├── Security Scan
-    ├── Build Docker Image
-    └── Push Image
-            │
-            ▼
-Update GitOps Repository
-            │
-            ▼
-Argo CD
-            │
-            ▼
-Amazon EKS
-            │
-    ┌───────┼────────┐
-    │       │        │
-Applications Platform Services Platform APIs
-            │
-            ▼
-     OpenTelemetry
-            │
-    ┌───────┼────────┐
-    │       │        │
-Prometheus Loki     Tempo
-    └───────┼────────┘
-            ▼
-         Grafana
-            │
-            ▼
- Backstage (Developer Portal)
+## High-Level Architecture
+
+```mermaid
+flowchart TD
+
+    Dev[Developer] -->|Git Push| GitHub[GitHub]
+
+    GitHub --> CI[GitHub Actions<br/>CI Pipeline]
+
+    CI --> GitOps[GitOps Repository]
+
+    GitOps --> Argo[Argo CD]
+
+    Argo --> EKS[Amazon EKS]
+
+    EKS --> Apps[Applications]
+
+    Apps --> OTel[OpenTelemetry]
+
+    OTel --> Metrics[Prometheus]
+    OTel --> Logs[Loki]
+    OTel --> Traces[Tempo]
+
+    Metrics --> Grafana[Grafana]
+    Logs --> Grafana
+    Traces --> Grafana
+
+    Grafana --> Backstage[Backstage<br/>Developer Portal]
+```
                         
 ---
 
